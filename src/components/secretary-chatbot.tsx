@@ -2,8 +2,8 @@
 
 import type React from "react"
 import { useState, useRef, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { Button } from "@/src/components/ui/button"
+import { Card } from "@/src/components/ui/card"
 import { MessageCircle, X, Send, Calendar, Mail, User } from "lucide-react"
 
 interface Message {

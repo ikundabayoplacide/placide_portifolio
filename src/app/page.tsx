@@ -1,11 +1,13 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/src/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/src/components/ui/card"
+import { Badge } from "@/src/components/ui/badge"
 import { Mail, Phone, MapPin, Github, ExternalLink, Calendar, Building, Download, Play } from "lucide-react"
 import Image from "next/image"
-import SecretaryChatbot from "@/components/secretary-chatbot"
+import SecretaryChatbot from "@/src/components/secretary-chatbot"
+import Header from "../pages/header"
+import Hero from "../pages/hero"
 
 export default function Portfolio() {
   const skills = [
@@ -95,94 +97,20 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center justify-between">
-            <h1 className="text-2xl font-serif font-black text-primary">IKUNDABAYO Placide</h1>
-            <div className="hidden md:flex items-center gap-6">
-              <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
-                About
-              </a>
-              <a href="#skills" className="text-foreground hover:text-primary transition-colors font-medium">
-                Skills
-              </a>
-              <a href="#experience" className="text-foreground hover:text-primary transition-colors font-medium">
-                Experience
-              </a>
-              <a href="#projects" className="text-foreground hover:text-primary transition-colors font-medium">
-                Projects
-              </a>
-              <a href="#materials" className="text-foreground hover:text-primary transition-colors font-medium">
-                Materials
-              </a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
-                Contact
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 via-background to-accent/5">
-        <div className="container mx-auto text-center max-w-4xl">
-          <div className="mb-8 flex justify-center">
-            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
-              <Image
-                src="/images/placide-headshot.jpg"
-                alt="IKUNDABAYO Placide - Full-Stack Developer"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-serif font-black text-foreground mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Full-Stack Developer
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-            Passionate software developer with expertise in JavaScript, React, Laravel, and mobile development. I'm
-            committed to learning, growing, and building innovative solutions that make a difference.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 shadow-lg"
-              onClick={() => window.open("https://www.youtube.com/shorts/8rCsn5fDjcw", "_blank")}
-            >
-              <Play className="w-4 h-4 mr-2" />
-              Watch Introduction Video
-            </Button>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-lg">
-              <a href="#projects" className="flex items-center gap-2">
-                View My Work
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary text-primary hover:bg-primary/10 bg-transparent"
-            >
-              <a href="#contact" className="flex items-center gap-2">
-                Get In Touch
-                <Mail className="w-4 h-4" />
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+    
+  <Header/>
+    <Hero/>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-4 bg-secondary/30">
-        <div className="container mx-auto max-w-4xl">
-          <h3 className="text-3xl font-serif font-bold text-center mb-12">About Me</h3>
+      <section id="about" className="py-24 px-4 bg-gradient-to-b from-background to-secondary/20">
+        <div className="container mx-auto max-w-6xl">
+          <h3 className="text-4xl md:text-5xl font-serif font-black text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">About Me</h3>
+          <p className="text-center text-muted-foreground mb-16 text-lg">Building the future, one line of code at a time</p>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 As a Full-stack developer, I leverage my experience in Software Development for both web and mobile
-                applications, supported by over three years of academic learning and one and a half years of practical
+                applications, supported by over three years of academic learning and practice in projects and more than two years of practical
                 experience.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -201,7 +129,7 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            <div className="bg-card p-6 rounded-lg shadow-md">
+            <div className="bg-gradient-to-br from-card to-secondary/30 p-8 rounded-2xl shadow-xl border border-border/50 hover:shadow-2xl transition-shadow duration-300">
               <h4 className="font-serif font-bold mb-4">Education & Languages</h4>
               <div className="space-y-4">
                 <div>
@@ -234,20 +162,25 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h3 className="text-3xl font-serif font-bold text-center mb-12">Technical Skills</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card>
+      <section id="skills" className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(5,150,105,0.05),transparent_70%)]"></div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <h3 className="text-4xl md:text-5xl font-serif font-black text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Technical Skills</h3>
+          <p className="text-center text-muted-foreground mb-16 text-lg">Technologies I work with daily</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl group">
               <CardHeader>
-                <CardTitle>Hard Skills</CardTitle>
+                <CardTitle className="text-2xl font-serif flex items-center gap-2">
+                  <span className="text-3xl">💻</span> Hard Skills
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skills.map((skill) => (
+                <div className="flex flex-wrap gap-3">
+                  {skills.map((skill, i) => (
                     <Badge
                       key={skill.name}
-                      className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
+                      className="bg-primary/10 text-primary border-primary/20 hover:bg-primary hover:text-white transition-all duration-300 text-sm px-4 py-2 hover:scale-110 cursor-pointer"
+                      style={{ animationDelay: `${i * 50}ms` }}
                     >
                       {skill.name}
                     </Badge>
@@ -255,18 +188,21 @@ export default function Portfolio() {
                 </div>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="border-2 hover:border-accent/50 transition-all duration-300 hover:shadow-2xl group">
               <CardHeader>
-                <CardTitle>Soft Skills</CardTitle>
+                <CardTitle className="text-2xl font-serif flex items-center gap-2">
+                  <span className="text-3xl">🎯</span> Soft Skills
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {["Teamwork", "Creativity", "Time Management", "Flexibility", "Communication", "Problem Solving"].map(
-                    (skill) => (
+                    (skill, i) => (
                       <Badge
                         key={skill}
                         variant="outline"
-                        className="border-accent text-accent hover:bg-accent/10 transition-colors"
+                        className="border-2 border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300 text-sm px-4 py-2 hover:scale-110 cursor-pointer"
+                        style={{ animationDelay: `${i * 50}ms` }}
                       >
                         {skill}
                       </Badge>
@@ -275,37 +211,58 @@ export default function Portfolio() {
                 </div>
               </CardContent>
             </Card>
+            <Card className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl group">
+              <CardHeader>
+                <CardTitle className="text-2xl font-serif flex items-center gap-2">
+                  <span className="text-3xl">🚀</span> Deployment
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-3">
+                  {["cPanel", "Vercel", "Render"].map((platform, i) => (
+                    <Badge
+                      key={platform}
+                      className="bg-primary/10 text-primary border-primary/20 hover:bg-primary hover:text-white transition-all duration-300 text-sm px-4 py-2 hover:scale-110 cursor-pointer"
+                      style={{ animationDelay: `${i * 50}ms` }}
+                    >
+                      {platform}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 px-4 bg-secondary/30">
-        <div className="container mx-auto max-w-4xl">
-          <h3 className="text-3xl font-serif font-bold text-center mb-12">Experience</h3>
+      <section id="experience" className="py-24 px-4 bg-gradient-to-b from-secondary/20 to-background">
+        <div className="container mx-auto max-w-6xl">
+          <h3 className="text-4xl md:text-5xl font-serif font-black text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Experience</h3>
+          <p className="text-center text-muted-foreground mb-16 text-lg">My professional journey</p>
           <div className="space-y-6">
             {experiences.map((exp, index) => (
-              <Card key={index}>
+              <Card key={index} className="border-l-4 border-l-primary hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                     <div>
-                      <CardTitle className="text-lg">{exp.title}</CardTitle>
-                      <CardDescription className="flex items-center gap-2">
-                        <Building className="w-4 h-4" />
+                      <CardTitle className="text-xl font-serif group-hover:text-primary transition-colors">{exp.title}</CardTitle>
+                      <CardDescription className="flex items-center gap-2 text-base">
+                        <Building className="w-5 h-5 text-primary" />
                         {exp.company}
                       </CardDescription>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground bg-secondary/50 px-4 py-2 rounded-full">
                       <Calendar className="w-4 h-4" />
                       {exp.period}
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-3">{exp.description}</p>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">{exp.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary">
+                      <Badge key={tech} variant="secondary" className="hover:bg-primary hover:text-white transition-colors">
                         {tech}
                       </Badge>
                     ))}
@@ -318,34 +275,36 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <h3 className="text-3xl font-serif font-bold text-center mb-12">Featured Projects</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section id="projects" className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(14,165,233,0.05),transparent_70%)]"></div>
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <h3 className="text-4xl md:text-5xl font-serif font-black text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Featured Projects</h3>
+          <p className="text-center text-muted-foreground mb-16 text-lg">Showcasing my best work</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 hover:border-primary/50 bg-gradient-to-br from-card to-secondary/20">
                 <CardHeader>
-                  <CardTitle className="text-lg">{project.name}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardTitle className="text-xl font-serif group-hover:text-primary transition-colors">{project.name}</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary">
+                      <Badge key={tech} variant="secondary" className="group-hover:bg-primary group-hover:text-white transition-colors">
                         {tech}
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="outline" asChild>
+                  <div className="flex gap-3">
+                    <Button size="sm" className="bg-primary hover:bg-primary/90 flex-1" asChild>
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2"
+                        className="flex items-center justify-center gap-2"
                       >
                         <Github className="w-4 h-4" />
-                        Code
+                        View Code
                       </a>
                     </Button>
                   </div>
@@ -356,48 +315,48 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="materials" className="py-16 px-4 bg-secondary/30">
-        <div className="container mx-auto max-w-4xl">
-          <h3 className="text-3xl font-serif font-bold text-center mb-12">Communications Materials</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
+      <section id="materials" className="py-24 px-4 bg-gradient-to-b from-background to-secondary/20">
+        <div className="container mx-auto max-w-5xl">
+          <h3 className="text-4xl md:text-5xl font-serif font-black text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Download Materials</h3>
+          <p className="text-center text-muted-foreground mb-16 text-lg">Get my professional documents</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 hover:border-primary/50 bg-gradient-to-br from-card to-primary/5">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Download className="w-5 h-5 text-primary" />
+                <CardTitle className="flex items-center gap-3 text-2xl font-serif">
+                  <Download className="w-6 h-6 text-primary" />
                   Curriculum Vitae
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="text-base">
                   Complete professional CV with detailed experience, skills, and education background.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button
-                  className="w-full bg-primary hover:bg-primary/90"
+                  className="w-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all py-6 text-base"
                   onClick={() => window.open("/api/download-cv", "_blank")}
                 >
-                  <Download className="w-4 h-4 mr-2" />
+                  <Download className="w-5 h-5 mr-2" />
                   Download CV (PDF)
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 hover:border-accent/50 bg-gradient-to-br from-card to-accent/5">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Download className="w-5 h-5 text-primary" />
-                  Cover Letter Template
+                <CardTitle className="flex items-center gap-3 text-2xl font-serif">
+                  <Download className="w-6 h-6 text-accent" />
+                  Cover Letter
                 </CardTitle>
-                <CardDescription>
-                  Professional cover letter template showcasing my motivation and career objectives.
+                <CardDescription className="text-base">
+                  Professional cover letter showcasing my motivation and career objectives.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button
-                  variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary/10 bg-transparent"
+                  className="w-full bg-accent hover:bg-accent/90 shadow-lg hover:shadow-xl transition-all py-6 text-base"
                   onClick={() => window.open("/api/download-cover-letter", "_blank")}
                 >
-                  <Download className="w-4 h-4 mr-2" />
+                  <Download className="w-5 h-5 mr-2" />
                   Download Cover Letter (PDF)
                 </Button>
               </CardContent>
@@ -407,9 +366,11 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h3 className="text-3xl font-serif font-bold text-center mb-12">Get In Touch</h3>
+      <section id="contact" className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <h3 className="text-4xl md:text-5xl font-serif font-black text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Get In Touch</h3>
+          <p className="text-center text-muted-foreground mb-16 text-lg">Let's create something amazing together</p>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h4 className="text-xl font-serif font-bold mb-6">Let's Connect</h4>
@@ -450,10 +411,10 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-            <Card className="shadow-lg">
+            <Card className="shadow-2xl border-2 hover:border-primary/50 transition-all duration-300 bg-gradient-to-br from-card to-secondary/20">
               <CardHeader>
-                <CardTitle>Send a Message</CardTitle>
-                <CardDescription>I'll get back to you as soon as possible</CardDescription>
+                <CardTitle className="text-2xl font-serif">Send a Message</CardTitle>
+                <CardDescription className="text-base">I'll get back to you within 24 hours</CardDescription>
               </CardHeader>
               <CardContent>
                 <form className="space-y-4">
@@ -520,8 +481,8 @@ export default function Portfolio() {
                     ></textarea>
                   </div>
 
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 shadow-md">
-                    <Mail className="w-4 h-4 mr-2" />
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 py-6 text-base">
+                    <Mail className="w-5 h-5 mr-2" />
                     Send Message
                   </Button>
                 </form>
@@ -533,6 +494,42 @@ export default function Portfolio() {
 
       {/* Chatbot Component */}
       <SecretaryChatbot />
+      
+      {/* Footer */}
+      <footer className="bg-gradient-to-br from-secondary/50 to-background border-t border-border py-12 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h4 className="text-xl font-serif font-bold mb-4 text-primary">IKUNDABAYO Placide</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Full-Stack Developer passionate about creating innovative solutions and building impactful digital experiences.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-lg font-serif font-bold mb-4">Quick Links</h4>
+              <div className="space-y-2">
+                <a href="#about" className="block text-muted-foreground hover:text-primary transition-colors text-sm">About</a>
+                <a href="#skills" className="block text-muted-foreground hover:text-primary transition-colors text-sm">Skills</a>
+                <a href="#experience" className="block text-muted-foreground hover:text-primary transition-colors text-sm">Experience</a>
+                <a href="#projects" className="block text-muted-foreground hover:text-primary transition-colors text-sm">Projects</a>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-lg font-serif font-bold mb-4">Connect</h4>
+              <div className="space-y-2">
+                <a href="mailto:ikundabayoplacide500@gmail.com" className="block text-muted-foreground hover:text-primary transition-colors text-sm">Email</a>
+                <a href="https://github.com/ikundabayoplacide" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-primary transition-colors text-sm">GitHub</a>
+                <a href="tel:+250789897235" className="block text-muted-foreground hover:text-primary transition-colors text-sm">Phone</a>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-border pt-8 text-center">
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} IKUNDABAYO Placide. Built with <span className="text-primary">Next.js</span> & <span className="text-accent">Tailwind CSS</span>
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
