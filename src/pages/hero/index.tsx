@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/src/components/ui/button"
-import { Play, ExternalLink, Mail, Github, Linkedin, Code2, Sparkles } from "lucide-react"
+import { Play, Mail, Github, Linkedin, Code2, Sparkles } from "lucide-react"
 import Image from "next/image"
 
 function Hero() {

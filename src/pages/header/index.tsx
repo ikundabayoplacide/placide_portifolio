@@ -44,11 +44,14 @@ function Header() {
       <div className="container mx-auto px-4 py-5">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="group">
+          <div className="flex gap-6">
+            <img src="/images/profile-removebg.png" alt="Logo" className="w-12 h-10 rounded-full" />
+          <a href="/" className="group">
             <h1 className="text-3xl font-serif font-black bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
               IKUNDABAYO Placide
             </h1>
           </a>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">

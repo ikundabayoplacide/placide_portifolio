@@ -23,6 +23,22 @@ export default function Portfolio() {
   ]
 
   const experiences = [
+       {
+      title: "Full Stack Developer",
+      company: "SAN TECH",
+      period: "October 2024 - February 2025",
+      technologies: ["React.Js", "Node.Js"],
+      description:
+        "Developed full-stack applications using Node Js for backend and React Js for frontend development.",
+    },
+      {
+      title: "Professional Training Full Stack Developer",
+      company: "Solvit Africa",
+      period: "July 2025 - October 2025",
+      technologies: ["React Js", "Node Js"],
+      description:
+        "Code2Connect Fellowship on NODE.JS and REACT.JS, where I developed full-stack applications using Node Js for backend and React Js for frontend development.",
+    },
     {
       title: "Internship - Full Stack Development",
       company: "Silve-Rwanda Ltd",
@@ -38,30 +54,32 @@ export default function Portfolio() {
       technologies: ["WordPress", "PHP", "CSS"],
       description: "Created and customized WordPress websites for various clients.",
     },
-    {
-      title: "Web Developer",
-      company: "PAC Rwanda",
-      period: "October 2023 - December 2023",
-      technologies: ["HTML", "CSS", "React"],
-      description: "Built responsive web applications using modern frontend technologies.",
-    },
-    {
-      title: "Training Program",
-      company: "SolveIt Africa",
-      period: "June 2023 - Sep 2025",
-      technologies: ["Various Technologies"],
-      description: "Comprehensive software development training program.",
-    },
-    {
+      {
       title: "Mobile Development",
       company: "LLC CROP (Japan)",
       period: "February 2024 - Current",
       technologies: ["React Native", "Mobile Development"],
       description: "Mobile application development for international client.",
     },
+    {
+      title: "Web Developer",
+      company: "PAC Rwanda",
+      period: "October 2023 - December 2023",
+      technologies: ["HTML", "CSS", "React"],
+      description: "Built responsive web applications using modern frontend technologies.",
+    }
+  
   ]
 
   const projects = [
+    {
+      name: "Community Listening System and Management Information (CLSMI)",
+      description:
+        "A web-based system for collecting and managing community feedback, built with React for the frontend and Node.js for the backend.",
+      technologies: ["React", "Node.js","Mysql","Tailwind CSS"],
+      github: "https://github.com/ikundabayoplacide/rich.git",
+      live:"https://richubuzima.rw/"
+    },
     {
       name: "Ticket Booking Mobile App",
       description:
@@ -70,17 +88,19 @@ export default function Portfolio() {
       github: "https://github.com/ikundabayoplacide/Ticket-Booking-Mobile-App",
     },
     {
+      name: "Bloker: Empowering Communities to Join capital Markets",
+      description: "A web application that empowers communities to participate in capital markets, built with Next.js and Mysql database.",
+      technologies: ["Next.js", "Mysql"],
+      github: "https://github.com/ikundabayoplacide/broker.git",
+      live:"https://eac-se.com/"
+    },
+    {
       name: "Chatbot Application",
       description: "An intelligent chatbot built with TypeScript for automated customer service and support.",
       technologies: ["TypeScript", "Node.js"],
-      github: "https://github.com/ikundabayoplacide/chatbot",
+      github: "https://github.com/ikundabayoplacide/chatbot"
     },
-    {
-      name: "Node.js Projects Collection",
-      description: "A collection of Node.js projects developed during training at SolveIt Africa.",
-      technologies: ["TypeScript", "Node.js"],
-      github: "https://github.com/ikundabayoplacide/NODEJS-PROJECTS-WITH-SOLVIT",
-    },
+    
     {
       name: "Task Manager CLI",
       description: "A command-line interface tool for managing tasks and improving productivity.",
@@ -98,7 +118,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
     
-  <Header/>
+     <Header/>
     <Hero/>
 
       {/* About Section */}
@@ -240,7 +260,7 @@ export default function Portfolio() {
         <div className="container mx-auto max-w-6xl">
           <h3 className="text-4xl md:text-5xl font-serif font-black text-center mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Experience</h3>
           <p className="text-center text-muted-foreground mb-16 text-lg">My professional journey</p>
-          <div className="space-y-6">
+          <div className="space-y-6 grid md:grid-cols-2 gap-8">
             {experiences.map((exp, index) => (
               <Card key={index} className="border-l-4 border-l-primary hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
                 <CardHeader>
@@ -305,6 +325,17 @@ export default function Portfolio() {
                       >
                         <Github className="w-4 h-4" />
                         View Code
+                      </a>
+                    </Button>
+                    <Button size="sm" className="bg-primary hover:bg-primary/90 flex-1" asChild>
+                      <a
+                        href={project.live} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        View Live
                       </a>
                     </Button>
                   </div>
