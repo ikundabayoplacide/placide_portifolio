@@ -1,11 +1,13 @@
 "use client"
 
-import { Menu, X } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useTheme } from "@/src/components/theme-provider"
+import { Menu, Moon, Sun, X } from "lucide-react"
+import { useEffect, useState } from "react"
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
+  const { theme, setTheme } = useTheme()
 
   const navLinks = [
     { href:"#home", label: "Home" },
@@ -16,6 +18,10 @@ function Header() {
     { href: "#materials", label: "Materials" },
     { href: "#contact", label: "Contact" },
   ]
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light")
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +67,7 @@ function Header() {
                 href={link.href}
                 className={`transition-all duration-300 !font-extrabold relative group ${
                   activeSection === link.href
-                    ? "text-[#1A3263] px-4 py-2 rounded-lg"
+                    ? "text-primary px-4 py-2 rounded-lg"
                     : "text-foreground hover:text-primary"
                 }`}
               >
@@ -71,20 +77,46 @@ function Header() {
                 }`}></span>
               </a>
             ))}
+            
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 hover:bg-primary/10 rounded-lg transition-all duration-300 border border-border hover:border-primary"
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? (
+                <Moon className="w-5 h-5 text-foreground hover:text-primary transition-colors" />
+              ) : (
+                <Sun className="w-5 h-5 text-foreground hover:text-primary transition-colors" />
+              )}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 hover:bg-primary/10 rounded-lg transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="w-6 h-6 text-primary" />
-            ) : (
-              <Menu className="w-6 h-6 text-primary" />
-            )}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 hover:bg-primary/10 rounded-lg transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? (
+                <Moon className="w-5 h-5 text-primary" />
+              ) : (
+                <Sun className="w-5 h-5 text-primary" />
+              )}
+            </button>
+            <button
+              className="p-2 hover:bg-primary/10 rounded-lg transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 text-primary" />
+              ) : (
+                <Menu className="w-6 h-6 text-primary" />
+              )}
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Navigation */}
@@ -97,7 +129,7 @@ function Header() {
                   href={link.href}
                   className={`transition-all duration-300 font-medium text-base py-3 px-4 rounded-lg border-b-2 ${
                     activeSection === link.href
-                      ? "text-white bg-[#1A3263] border-[#1A3263]"
+                      ? "text-white bg-primary border-primary"
                       : "text-foreground hover:text-primary hover:bg-primary/10 border-transparent"
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
