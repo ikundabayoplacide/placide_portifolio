@@ -6,8 +6,8 @@ import { Badge } from "@/src/components/ui/badge"
 import { Button } from "@/src/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/src/components/ui/card"
 import { Building, Code2, Download, ExternalLink, Github, Globe, GraduationCap, Mail, MapPin, Phone, Rocket } from "lucide-react"
-import Header from "../pages/header"
-import Hero from "../pages/hero"
+import Header from "@/src/components/sections/header"
+import Hero from "@/src/components/sections/hero"
 
 export default function Portfolio() {
   const skills = [
