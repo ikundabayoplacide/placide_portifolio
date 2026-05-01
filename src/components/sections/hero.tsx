@@ -149,7 +149,7 @@ function Hero() {
                     <Code2 className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-foreground">2+</p>
+                    <p className="text-2xl font-bold text-foreground">4+</p>
                     <p className="text-xs text-muted-foreground">Years Experience</p>
                   </div>
                 </div>
