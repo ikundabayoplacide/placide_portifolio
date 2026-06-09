@@ -694,9 +694,9 @@ export default function Portfolio() {
              <div>
               <h4 className="text-lg font-serif font-bold mb-4">Let's Chart</h4>
               <div className="space-y-2 flex gap-3">
-                <a href="https://www.instagram.com/placide.c.eng/" className="block text-muted-foreground hover:text-primary transition-colors text-lg"><img src="/instagram.jpeg" alt="Instagram" className="w-10 " /></a>
+                <a href="https://www.instagram.com/placide.c.eng/"  target="_blank"className="block text-muted-foreground hover:text-primary transition-colors text-lg"><img src="/instagram.jpeg" alt="Instagram" className="w-10 " /></a>
                 <a href="https://wa.me/250789897235" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-primary transition-colors text-lg"><img src="/whatsap.jpeg" alt="WhatsApp" className="w-10 h-10" /></a>
-                <a href="https://x.com/IKUNDABAYOPlac1" className="block text-muted-foreground hover:text-primary transition-colors text-lg"><img src="/twiter.png" alt="Twitter" className="w-10 h-10 rounded" /></a>
+                <a href="https://x.com/IKUNDABAYOPlac1"   target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-primary transition-colors text-lg"><img src="/twiter.png" alt="Twitter" className="w-10 h-10 rounded" /></a>
               </div>
             </div>
           </div>
