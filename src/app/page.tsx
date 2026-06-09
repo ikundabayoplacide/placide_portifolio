@@ -80,12 +80,13 @@ export default function Portfolio() {
       github: "https://github.com/ikundabayoplacide/rich.git",
       live:"https://richubuzima.rw/"
     },
-    {
-      name: "Ticket Booking Mobile App",
+     {
+      name: "Palloti presse Printing House Site",
       description:
-        "A mobile application for booking tickets with user-friendly interface and secure payment integration.",
-      technologies: ["JavaScript", "React Native"],
-      github: "https://github.com/ikundabayoplacide/Ticket-Booking-Mobile-App",
+        "This project is a website for a printing company based in Kigali, Rwanda. It showcases the company's printing and design services for businesses, organizations, and individuals. The platform helps customers learn about available solutions and connect with the company. It reflects the company's commitment to quality, reliability, and timely delivery. ",
+      technologies: ["node", "Postgres", "React", "Tailwind CSS"],
+      github: "https://github.com/ikundabayoplacide/Pollice-Printing-house",
+      live:"https://pollice-printing-house.vercel.app"
     },
     {
       name: "Bloker: Empowering Communities to Join capital Markets",
@@ -666,7 +667,7 @@ export default function Portfolio() {
       {/* Footer */}
       <footer className="bg-gradient-to-br from-secondary/50 to-background border-t border-border py-12 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <h4 className="text-xl font-serif font-bold mb-4 text-primary">IKUNDABAYO Placide</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -690,10 +691,18 @@ export default function Portfolio() {
                 <a href="tel:+250789897235" className="block text-muted-foreground hover:text-primary transition-colors text-sm">Phone</a>
               </div>
             </div>
+             <div>
+              <h4 className="text-lg font-serif font-bold mb-4">Let's Chart</h4>
+              <div className="space-y-2 flex gap-3">
+                <a href="https://www.instagram.com/placide.c.eng/" className="block text-muted-foreground hover:text-primary transition-colors text-lg"><img src="/instagram.jpeg" alt="Instagram" className="w-10 " /></a>
+                <a href="https://wa.me/250789897235" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-primary transition-colors text-lg"><img src="/whatsap.jpeg" alt="WhatsApp" className="w-10 h-10" /></a>
+                <a href="https://x.com/IKUNDABAYOPlac1" className="block text-muted-foreground hover:text-primary transition-colors text-lg"><img src="/twiter.png" alt="Twitter" className="w-10 h-10 rounded" /></a>
+              </div>
+            </div>
           </div>
           <div className="border-t border-border pt-8 text-center">
             <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} IKUNDABAYO Placide. Built with <span className="text-primary">Next.js</span> & <span className="text-accent">Tailwind CSS</span>
+              © {new Date().getFullYear()} IKUNDABAYO Placide.
             </p>
           </div>
         </div>
