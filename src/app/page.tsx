@@ -86,7 +86,7 @@ export default function Portfolio() {
         "This project is a website for a printing company based in Kigali, Rwanda. It showcases the company's printing and design services for businesses, organizations, and individuals. The platform helps customers learn about available solutions and connect with the company. It reflects the company's commitment to quality, reliability, and timely delivery. ",
       technologies: ["node", "Postgres", "React", "Tailwind CSS"],
       github: "https://github.com/ikundabayoplacide/Pollice-Printing-house",
-      live:"https://pollice-printing-house.vercel.app"
+      live:"https://pallotti-presse.vercel.app/"
     },
     {
       name: "Bloker: Empowering Communities to Join capital Markets",
