@@ -84,7 +84,9 @@ function Hero() {
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="#contact"
+                href="https://www.linkedin.com/in/ikundabayo-placide-b63b07284"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-card border border-border hover:border-primary hover:bg-primary/10 rounded-lg transition-all duration-300 hover:scale-110 hover:-translate-y-1"
               >
                 <Linkedin className="w-5 h-5" />

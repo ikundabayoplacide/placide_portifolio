@@ -25,48 +25,51 @@ export default function Portfolio() {
   const experiences = [
        {
       title: "Full Stack Developer",
-      company: "SAN TECH",
-      period: "October 2024 - February 2025",
-      technologies: ["React.Js", "Node.Js"],
+      company: "San Tech",
+      period: "Oct 2025 - Present",
+      technologies: ["Node.js", "React", "Laravel", "Vue"],
       description:
-        "Developed full-stack applications using Node Js for backend and React Js for frontend development.",
+        "Build and maintain internal web applications on a Node.js backend with a React frontend, while keeping older Laravel and Vue systems running. Write REST APIs the frontend depends on and refactored a large tangled codebase into smaller modules to prevent fixes from breaking unrelated pages.",
     },
       {
       title: "Professional Training Full Stack Developer",
       company: "Solvit Africa",
       period: "July 2025 - October 2025",
-      technologies: ["React Js", "Node Js"],
+      technologies: ["React Js", "Node Js", "Docker"],
       description:
-        "Code2Connect Fellowship on NODE.JS and REACT.JS, where I developed full-stack applications using Node Js for backend and React Js for frontend development.",
+        "Code2Connect Fellowship on NODE.JS and REACT.JS, where I developed full-stack applications using Node Js for backend and React Js for frontend development. Also learned containerization and Dockerization of applications.",
     },
     {
       title: "Internship - Full Stack Development",
-      company: "Silve-Rwanda Ltd",
+      company: "Silver Rwanda Ltd",
       period: "June 2024 - Feb 2025",
-      technologies: ["Laravel", "React Native"],
+      technologies: ["PHP", "Laravel", "React Native", "Docker", "Git"],
       description:
-        "Developed full-stack applications using Laravel for backend and React Native for mobile development.",
+        "Worked on PHP Laravel systems for client projects and built mobile application screens using React Native. Set up Docker for the local environment to eliminate machine configuration issues, and collaborated day to day in shared Git branches.",
     },
     {
       title: "WordPress Developer",
       company: "Brave Tech",
       period: "Feb 2024 - April 2024",
-      technologies: ["WordPress", "PHP", "CSS"],
-      description: "Created and customized WordPress websites for various clients.",
+      technologies: ["WordPress", "PHP", "HTML", "CSS", "JavaScript"],
+      description:
+        "Built and customised WordPress sites for clients, editing themes directly in PHP, HTML, CSS and JavaScript rather than relying on page builders.",
     },
-      {
-      title: "Mobile Development",
+    {
+      title: "Mobile Developer",
       company: "LLC CROP (Japan)",
-      period: "February 2024 - Current",
-      technologies: ["React Native", "Mobile Development"],
-      description: "Mobile application development for international client.",
+      period: "Feb 2024 - Feb 2025",
+      technologies: ["React Native", "JavaScript"],
+      description:
+        "Built cross-platform mobile applications in React Native for a Japanese client, working fully remote across a seven-hour time difference.",
     },
     {
       title: "Web Developer",
       company: "PAC Rwanda",
-      period: "October 2023 - December 2023",
+      period: "Oct 2023 - Dec 2023",
       technologies: ["HTML", "CSS", "React"],
-      description: "Built responsive web applications using modern frontend technologies.",
+      description:
+        "Developed and maintained responsive web pages for PAC Rwanda, building UI components with React and styling with HTML and CSS to deliver a clean, accessible user experience.",
     }
   
   ]
@@ -94,25 +97,6 @@ export default function Portfolio() {
       technologies: ["Next.js", "Mysql"],
       github: "https://github.com/ikundabayoplacide/broker.git",
       live:"https://eac-se.com/"
-    },
-    {
-      name: "Chatbot Application",
-      description: "An intelligent chatbot built with TypeScript for automated customer service and support.",
-      technologies: ["TypeScript", "Node.js"],
-      github: "https://github.com/ikundabayoplacide/chatbot"
-    },
-    
-    {
-      name: "Task Manager CLI",
-      description: "A command-line interface tool for managing tasks and improving productivity.",
-      technologies: ["JavaScript", "Node.js"],
-      github: "https://github.com/ikundabayoplacide/TaskManager-With-CLI",
-    },
-    {
-      name: "Vehicle Tracking System",
-      description: "A comprehensive vehicle tracking system with real-time location monitoring.",
-      technologies: ["TypeScript", "React"],
-      github: "https://github.com/ikundabayoplacide/VehicleTracking",
     },
   ]
 
